@@ -27,6 +27,7 @@ header {
   color: #0c1000;
   border-radius: 25px;
   background-color: #374b3a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   align-items: center;
   animation: swipe__up 2s;
   transition: all 0.3s ease;
@@ -53,5 +54,9 @@ header .btn {
 
 header .btn:hover {
   background-color: #0c1000;
+  transition: all 0.3s ease;
+}
+.animation {
+  animation: swipe__up 2s;
   transition: all 0.3s ease;
 }
