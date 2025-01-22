@@ -40,6 +40,16 @@ select {
   border-radius: 5px;
   width: 100%;
 }
+
+select[name="title"] {
+  width: 7rem;
+}
+
+span {
+  font-size: 0.8rem;
+  color: red;
+  font-weight: 900;
+}
 .form-group-inline {
   display: flex;
   justify-content: space-between;
@@ -47,8 +57,8 @@ select {
 .form-group-inline .form-group {
   flex: 0 0 48%;
 }
+
 button {
-  width: 100%;
   padding: 12px;
   font-size: 18px;
   background-color: #4caf50;
@@ -58,5 +68,12 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-color: #45a049;
+  background-color: #4c7c4f;
+  transition: all 0.4s ease;
+}
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
 }

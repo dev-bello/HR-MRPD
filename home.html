@@ -4,202 +4,167 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/home.css" />
-    <title>NMDPRA NYSC/IT Member Information Form</title>
+    <title>NMDPRA NYSC/IT Member Info</title>
   </head>
   <body>
     <div class="container">
       <h2>NMDPRA NYSC/IT Member Information Form</h2>
-      <form action="#" method="post">
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="callup">Call Up No</label>
-            <input type="text" id="callup" name="callup" placeholder="FOR NYSC ONLY" required />
+      <form id="multiStepForm">
+        <!-- Step 1 -->
+        <div class="step active">
+          <h3>Personal Information</h3>
+
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="callup">Call Up No</label>
+              <input type="text" id="callup" name="callup" />
+            </div>
+
+            <div class="form-group">
+              <label for="stateCode">State Code</label>
+              <input type="text" id="lastname" name="lastname" />
+            </div>
           </div>
-          <div class="form-group">
-            <label for="callup">State Code</label>
-            <input
-              type="text"
-              id="stateCode"
-              name="stateCode"
-              placeholder="FOR NYSC ONLY"
-              required
-            />
+
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="title">Title <span>*</span></label>
+              <select id="title" name="title" required>
+                <option value="Mr">Mr</option>
+                <option value="Ms">Ms</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Dr">Dr</option>
+                <option value="Dr">Malam</option>
+                <option value="Dr">Sheikh</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="lastname">Last Name <span>*</span></label>
+              <input type="text" id="lastname" name="lastname" required />
+            </div>
           </div>
+
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="othernames">Other Names <span>*</span></label>
+              <input type="text" id="othernames" name="othernames" required />
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender <span>*</span></label>
+              <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" onclick="nextStep()" class="nextBtn">Next</button>
         </div>
 
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="title">Title</label>
-            <select id="title" name="title" required>
-              <option value="Mr">Mr</option>
-              <option value="Ms">Ms</option>
-              <option value="Mrs">Mrs</option>
-              <option value="Dr">Dr</option>
-              <option value="Dr">Malam</option>
-              <option value="Dr">Sheikh</option>
-            </select>
+        <!-- Step 2 -->
+        <div class="step">
+          <h3>Banking Information</h3>
+
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="bank">Bank</label>
+              <input type="text" id="bank" name="bank" />
+            </div>
+            <div class="form-group">
+              <label for="account_number">Account Number</label>
+              <input type="text" id="account_number" name="account_number" />
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="lastname">Last Name</label>
-            <input type="text" id="lastname" name="lastname" required />
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="account_type">Account Type </label>
+              <input type="text" id="account_type" name="account_type" />
+            </div>
+            <div class="form-group">
+              <label for="account_type">Account Name</label>
+              <input type="text" id="account_type" name="account_type" />
+            </div>
           </div>
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="employment_date">Start Date <span>*</span></label>
+              <input type="date" id="employment_date" name="employment_date" required />
+            </div>
+            <div class="form-group">
+              <label for="employment_date">Finish Date <span>*</span></label>
+              <input type="date" id="employment_date" name="employment_date" required />
+            </div>
+          </div>
+
+          <button type="button" onclick="prevStep()">Previous</button>
+          <button type="submit" onclick="nextStep() " class="nextBtn">Next</button>
         </div>
 
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="othernames">Other Names</label>
-            <input type="text" id="othernames" name="othernames" />
+        <!-- Step 3 -->
+        <div class="step">
+          <h3>Institution Information</h3>
+
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="institution">Name of Institution <span>*</span></label>
+              <input type="text" id="bank" name="institution" required />
+            </div>
+            <div class="form-group">
+              <label for="course">Course of Study <span>*</span></label>
+              <input type="text" id="course" name="course" required />
+            </div>
           </div>
-          <div class="form-group">
-            <label for="gender">Gender</label>
-            <select id="gender" name="gender" required>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
+
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="account_type">Faculty <span>*</span></label>
+              <input type="text" id="account_type" name="account_type" required />
+            </div>
           </div>
+
+          <button type="button" onclick="prevStep()">Previous</button>
+          <button type="submit" onclick="nextStep() " class="nextBtn">Next</button>
         </div>
 
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="dob">Date of Birth</label>
-            <input type="date" id="dob" name="dob" required />
-          </div>
-          <div class="form-group">
-            <label for="place_of_birth">Place of Birth</label>
-            <input type="text" id="place_of_birth" name="place_of_birth" required />
-          </div>
-        </div>
+        <!-- Step 4 -->
+        <div class="step">
+          <h3>Next of Kin Information</h3>
 
-        <div class="form-group-inline">
           <div class="form-group">
-            <label for="marital_status">Marital Status</label>
-            <select id="marital_status" name="marital_status" required>
-              <option value="Single">Single</option>
-              <option value="Married">Married</option>
-            </select>
+            <label for="next_of_kin">Next of Kin <span>*</span></label>
+            <input type="text" id="next_of_kin" name="next_of_kin" required />
           </div>
-          <div class="form-group">
-            <label for="spouse">Spouse Name (if married)</label>
-            <input type="text" id="spouse" name="spouse" />
-          </div>
-        </div>
 
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="genotype">Genotype</label>
-            <input type="text" id="genotype" name="genotype" />
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="next_of_kin_address">Next of Kin Address <span>*</span></label>
+              <input type="text" id="next_of_kin_address" name="next_of_kin_address" required />
+            </div>
+            <div class="form-group">
+              <label for="relationship">Relationship <span>*</span></label>
+              <input type="text" id="relationship" name="relationship" required />
+            </div>
           </div>
-          <div class="form-group">
-            <label for="blood_group">Blood Group</label>
-            <input type="text" id="blood_group" name="blood_group" />
-          </div>
-        </div>
 
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="residential_address">Residential Address</label>
-            <input type="text" id="residential_address" name="residential_address" required />
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="next_of_kin_contact">Next of Kin Contact Number <span>*</span></label>
+              <input type="text" id="next_of_kin_contact" name="next_of_kin_contact" required />
+            </div>
+            <div class="form-group">
+              <label for="next_of_kin_email">Next of Kin Email</label>
+              <input type="email" id="next_of_kin_email" name="next_of_kin_email" />
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-        </div>
 
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="mobile_phone">Mobile Phone</label>
-            <input type="text" id="mobile_phone" name="mobile_phone" required />
-          </div>
-          <div class="form-group">
-            <label for="nationality">Nationality</label>
-            <input type="text" id="nationality" name="nationality" required />
-          </div>
+          <button type="button" onclick="prevStep()">Previous</button>
+          <button type="submit">Submit</button>
         </div>
-
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="state_of_origin">State of Origin</label>
-            <input type="text" id="state_of_origin" name="state_of_origin" required />
-          </div>
-          <div class="form-group">
-            <label for="lga">LGA</label>
-            <input type="text" id="lga" name="lga" required />
-          </div>
-        </div>
-
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="religion">Religion</label>
-            <input type="text" id="religion" name="religion" />
-          </div>
-          <div class="form-group">
-            <label for="dept">Reporting to Dept/Unit</label>
-            <input type="text" id="dept" name="dept" required />
-          </div>
-        </div>
-
-        <h3>Banking Information</h3>
-
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="bank">Bank</label>
-            <input type="text" id="bank" name="bank" />
-          </div>
-          <div class="form-group">
-            <label for="account_type">Account Type</label>
-            <input type="text" id="account_type" name="account_type" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="account_number">Account Number</label>
-          <input type="text" id="account_number" name="account_number" />
-        </div>
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="employment_date">Employment Date</label>
-            <input type="date" id="employment_date" name="employment_date" />
-          </div>
-          <div class="form-group">
-            <label for="terminal_date">Terminal Date</label>
-            <input type="date" id="terminal_date" name="terminal_date" />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Status</label>
-          <label><input type="radio" name="status" value="IT" /> IT</label>
-          <label><input type="radio" name="status" value="NYSC" /> NYSC</label>
-        </div>
-
-        <h3>Next of Kin Information</h3>
-
-        <div class="form-group">
-          <label for="next_of_kin">Next of Kin</label>
-          <input type="text" id="next_of_kin" name="next_of_kin" required />
-        </div>
-
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="next_of_kin_address">Next of Kin Address</label>
-            <input type="text" id="next_of_kin_address" name="next_of_kin_address" required />
-          </div>
-          <div class="form-group">
-            <label for="relationship">Relationship</label>
-            <input type="text" id="relationship" name="relationship" required />
-          </div>
-        </div>
-
-        <div class="form-group-inline">
-          <div class="form-group">
-            <label for="next_of_kin_contact">Next of Kin Contact Number</label>
-            <input type="text" id="next_of_kin_contact" name="next_of_kin_contact" required />
-          </div>
-        </div>
-
-        <button type="submit">Submit</button>
       </form>
     </div>
+
+    <script src="script/main.js"></script>
   </body>
 </html>
